@@ -11,12 +11,6 @@ from flask_simplemde import SimpleMDE
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 
-# login_manager = LoginManager()
-# login_manager.session_protection = 'strong'
-# login_manager.login_view = 'auth.login'
-# photos = UploadSet('photos',IMAGES)
-# mail = Mail()
-# simple = SimpleMDE()
 
 def create_app(config_name):
     app = Flask(__name__)
@@ -31,5 +25,3 @@ def create_app(config_name):
 
     return app
     
-# from app import views
-# from .main import error
