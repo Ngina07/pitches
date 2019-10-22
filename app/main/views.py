@@ -1,5 +1,5 @@
 from flask import render_template,redirect,url_for,request
-from flask_login import login_required
+from flask_login import login_required,login_user,logout_user
 from . import main
 from app.models import User,Pitch,Comment
 from .forms import PitchForm,CommentForm
@@ -32,3 +32,4 @@ def new_pitch():
 
     title= 'Pitches'
     return render_template('new_pitch.html',pitch_form=form)
+
