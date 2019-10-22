@@ -12,6 +12,8 @@ class User(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255))
     email=db.Column(db.String(255),unique=True,index = True)
+    bio = db.Column(db.String(255))
+    profile_pic_path = db.Column(db.String())
     # pitch_id = db.Column(db.Integer,db.ForeignKey('pitches.id'))
     pass_secure = db.Column(db.String(225))
 
@@ -54,7 +56,7 @@ class Pitch(db.Model):
         gets pitches from the database
         '''
         pitches=Pitch.query.all()
-        
+
         return pitches
 
 
