@@ -3,7 +3,7 @@ import os
 class Config:
 
     SECRET_KEY = '830548fc746b58e082e0f2fe9ba4a7ff'
-
+    UPLOADED_PHOTOS_DEST ='app/static/photos'
     # MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     # MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 # class TestConfig(Config):

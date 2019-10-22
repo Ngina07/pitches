@@ -3,7 +3,7 @@ from flask_login import login_required,login_user,logout_user
 from . import main
 from app.models import User,Pitch,Comment
 from .forms import PitchForm,CommentForm,UpdateProfile
-from .. import db
+from .. import db,photos
 
 @main.route('/')
 def index():
@@ -60,3 +60,17 @@ def update_profile(uname):
         return redirect(url_for('.profile',uname=user.username))
 
     return render_template('profile/update.html',form =form)
+
+@main.route('/user/<uname>/update/pic',methods= ['POST'])
+@login_required
+def update_pic(uname):
+    '''
+    Method to update profile picture
+    '''
+    user = User.query.filter_by(username = uname).first()
+    if 'photo' in request.files:
+        filename = photos.save(request.files['photo'])
+        path = f'photos/{filename}'
+        user.profile_pic_path = path
+        db.session.commit()
+    return redirect(url_for('main.profile',uname=uname))
