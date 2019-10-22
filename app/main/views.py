@@ -31,7 +31,7 @@ def new_pitch():
         return redirect(url_for('.index'))
 
     title= 'Pitches'
-    return render_template('new_pitch.html',pitch_form=form)
+    return render_template('pitch.html',pitch_form=form)
 
 @main.route('/comment/new/', methods=['GET','POST'])
 @login_required
