@@ -1,5 +1,5 @@
 from flask import render_template,redirect,url_for,request,abort
-from flask_login import login_required,login_user,logout_user
+from flask_login import login_required,login_user,logout_user,current_user
 from . import main
 from app.models import User,Pitch,Comment
 from .forms import PitchForm,CommentForm,UpdateProfile
@@ -32,6 +32,26 @@ def new_pitch():
 
     title= 'Pitches'
     return render_template('new_pitch.html',pitch_form=form)
+
+@main.route('/comment/new/', methods=['GET','POST'])
+@login_required
+def new_comment():
+
+    '''
+    View new comment route function that returns a page with a form to create a pitch for the specified category
+    '''
+    comments = Comment.query.all()
+    form =CommentForm()
+    if form.validate_on_submit():
+        name=form.name.data
+        new_comment=Comment(name=name)
+        new_comment.save_comment()
+
+        return redirect(url_for('.index'))
+
+    title = "New Comment"
+    return render_template('new_comment.html', title=title, form=form,comments=comments)
+
 
 @main.route('/user/<uname>')
 def profile(uname):
