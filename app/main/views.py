@@ -22,11 +22,11 @@ def new_pitch():
     '''
     form= PitchForm()
     if form.validate_on_submit():
-        title=form.title.data
+        name =form.name.data
         description=form.description.data
         like=0
         dislike=0
-        new_pitch=Pitch(title=title,description=description,like=like,dislike=dislike)
+        new_pitch=Pitch(name = name ,description=description,like=like,dislike=dislike)
         new_pitch.save_pitch()
         return redirect(url_for('.index'))
 

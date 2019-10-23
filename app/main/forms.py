@@ -5,7 +5,7 @@ from ..models import User,Comment,Pitch
 
 class PitchForm(FlaskForm):
 
-    title = StringField('Enter pitch category',validators=[Required()])
+    name = StringField('Enter pitch category',validators=[Required()])
     description= TextAreaField('pitch description')
     submit = SubmitField('Submit')
 

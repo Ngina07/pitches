@@ -10,9 +10,9 @@ Pitches is an app where users register and sign in and are able to view, add, co
 ## Set-up and installations
 > Clone or download the repository
 > Create a virtual environment
->Run chmod a+x start.py 
->Run ./start.py
->Access your application through the local server link e.g. http://127.0.0.1:5001
+> Run chmod a+x start.py 
+> Run ./start.py
+> Access your application through the local server link e.g. http://127.0.0.1:5001
 
 
 ## Known bugs
