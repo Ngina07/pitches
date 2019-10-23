@@ -31,7 +31,7 @@ def new_pitch():
         return redirect(url_for('.index'))
 
     title= 'Pitches'
-    return render_template('pitch.html',pitch_form=form)
+    return render_template('pitch.html',pitch_form=form, title = title)
 
 @main.route('/comment/new/', methods=['GET','POST'])
 @login_required
@@ -94,3 +94,27 @@ def update_pic(uname):
         user.profile_pic_path = path
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
+
+
+@main.route('/pitch_vote/<int:id>',methods=['GET','POST'])
+
+def pitch_vote(id):
+    pitches=Pitch.query.get_or_404(id)
+    if request.args.get("like"):
+        pitches.like = pitches.like+1
+
+        db.session.add(pitches)
+        db.session.commit()
+
+        return redirect("/pitch_vote/{pitch_id}".format(pitch_id=pitches.id))
+
+    elif request.args.get("dislike"):
+        pitches.dislike=pitches.dislike+1
+
+        db.session.add(pitches)
+        db.session.commit()
+
+        return redirect("/pitch_vote/{pitch_id}".format(pitch_id=pitches.id))
+
+    title= 'Pitches'
+    return render_template('index.html',pitches=pitches, title = title )

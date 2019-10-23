@@ -39,7 +39,8 @@
     <ul class="list-unstyled">
 
         {{ macro.displayPitchList(pitches) }}
-
+        <a href="/pitch_review/{{pitches.id}}?like=1">Like: {{pitches.like}}</a>
+        <a href="/pitch_review/{{pitches.id}}?dislike=1">Dislike: {{pitches.dislike}}</a>
     </ul>
 
     <ul class="list-unstyled">
