@@ -117,4 +117,4 @@ def pitch_vote(id):
         return redirect("/pitch_vote/{pitch_id}".format(pitch_id=pitches.id))
 
     title= 'Pitches'
-    return render_template('index.html',pitches=pitches, title = title )
+    return render_template('/pitch_vote.html',pitches=pitches, title = title )

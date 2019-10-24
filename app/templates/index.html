@@ -3,9 +3,32 @@
 
 {% block styles%}
 {{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+
+<link rel="stylesheet" href="{{url_for('static', filename = 'css/index.css')}}">
 {% endblock %}
 <style>
+        @import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+
+        h2{    display: block;
+               font-family: 'Arvo', serif;
+               color: #360a70cc;
+               font-size: 40px;
+               font-weight: 1000;
+               
+             }
+             ul {
+               font-family: 'Arvo', serif;
+             }
+             .container {
+               background-image: url('/static/css/photos/timebg.jpg');
+             }
+             a{        display: block;
+                       font-family:  'Arvo', serif;
+                       color: #360a70cc;
+                       font-size: 20px;
+                       font-weight: 1000;
+                       text-align: center;
+                     }
 
 </style>
 
@@ -13,12 +36,13 @@
 
 <title> {{ title }} </title>
 
-<div class="container">
+<div class="container" style="width: 100%; padding-top: 5px; height: 100%; background-image:url('/app/static/photos/timebg.jpg')">
 
-    <div class="row">
-        <h2 class="pitch-header">
-            One Minute Pitches
+    <div class="jumbotron" style="width: 100%; text-align:center">
+        <h2 class="pitch-header" style="font-size: 70px">
+            ONE MINUTE PITCHES
         </h2>
+        <p>Life can get a little complicated, so much can change in 60 seconds, this pitches might just be that little nudge you need!</p>
 
     </div>
     <br><br><br>
@@ -39,12 +63,20 @@
     <ul class="list-unstyled">
 
         {{ macro.displayPitchList(pitches) }}
-        <a href="/pitch_review/{{pitches.id}}?like=1">Like: {{pitches.like}}</a>
-        <a href="/pitch_review/{{pitches.id}}?dislike=1">Dislike: {{pitches.dislike}}</a>
-    </ul>
 
+
+    </ul>
+    <div class="row">
+        <h2 class="pitch-header" style="padding-left: 200px">
+            COMMENTS
+        </h2>
+
+    </div>
     <ul class="list-unstyled">
+
+
         {{ macro.displayCommentList(comments) }}
+
     </ul>
 
 

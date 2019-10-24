@@ -2,19 +2,19 @@
 
 
 {% for pitch in pitches %}
-<div class="row">
+<div class="row" style="padding-right: 900px; padding-left: 25px">
 
     <div class="col-md-2 col-lg-2">
 
     </div>
 
-    <div class=" col-xs-12 col-sm-12 col-md-8 col-lg-8 well pitch-well">
+    <div class=" col-xs-12 col-sm-12 col-md-8 col-lg-8 well pitch-well" style="width: 1500px">
 
         <li class="text-center">
             <h2>{{pitch.name}}</h2>
             <h3>{{pitch.description}}</h3>
-            <a href="/pitch_review/{{pitch.id}}?like=1">Like: {{pitch.like}}</a>
-            <a href="/pitch_review/{{pitch.id}}?dislike=1">Dislike: {{pitch.dislike}}</a>
+            <a href="/pitch_vote/{{pitch.id}}?like=1">Like: {{pitch.like}}</a>
+            <a href="/pitch_vote/{{pitch.id}}?dislike=1">Dislike: {{pitch.dislike}}</a>
             <h3 class="comment-create">
                 <a href="{{url_for('main.new_comment')}}">Add Comment</a>
             </h3>
@@ -35,7 +35,7 @@
 
 
 {% for comment in comments %}
-<div class="row">
+<div class="row" style="padding-right: 705px">
 
     <div class="col-md-2 col-lg-2"></div>
 
@@ -58,5 +58,6 @@
 </div>
 
 {% endfor %}
+
 
 {% endmacro %}
