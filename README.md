@@ -7,12 +7,23 @@ Pitches is an app where users register and sign in and are able to view, add, co
 
 ## BDD
 
+1. The user should see the pitches other people have posted.
+2. The user should vote on the pitch they liked and give it a downvote or upvote. 
+3. The user should comment on the pitches when they are logged in.
+4. The user should be able to submit a pitch after log in
+
+
 ## Set-up and installations
+
 > Clone or download the repository
+
 > Create a virtual environment
+
 > Run chmod a+x start.py 
+
 > Run ./start.py
-> Access your application through the local server link e.g. http://127.0.0.1:5001
+
+> Access your application through the local     server link e.g. http://127.0.0.1:5001
 
 
 ## Known bugs
