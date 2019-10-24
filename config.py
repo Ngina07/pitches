@@ -4,6 +4,7 @@ class Config:
 
     SECRET_KEY = '830548fc746b58e082e0f2fe9ba4a7ff'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
