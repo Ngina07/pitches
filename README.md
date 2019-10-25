@@ -3,7 +3,7 @@
 #### By : Phillis Ngina Njoroge
 
 ### Description
-Pitches is an app where users register and sign in and are able to view, add, comment and vote on one minute pitches in the various categories.Access the live here.
+Pitches is an app where users register and sign in and are able to view, add, comment and vote on one minute pitches in the various categories.Access the live [here](https://pitches101.herokuapp.com)
 
 ## BDD
 
